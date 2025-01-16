@@ -122,7 +122,15 @@ public class Vectores {
      * M en todas sus posiciones y lo muestre por pantalla.
      */
     public static void vector6() {
+        int n = Leer.leerEntero("Introduce la longitud de la array: ");
+        int m = Leer.leerEntero("Introduce otro valor numérico: ");
+        int[] vector = new int[n];
 
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] = m;
+        }
+
+        System.out.println(vector);
     }
 
     /**
