@@ -139,7 +139,17 @@ public class Vectores {
      */
 
     public static void vector7() {
+        int[] vector = new int[55];
+        int iteraciones = 0;
 
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 0; j < i; j++) {
+                vector[iteraciones] = i;
+                iteraciones++;
+            }
+        }
+
+        System.out.println(vector);
     }
 
     /**
@@ -154,7 +164,41 @@ public class Vectores {
      */
 
     public static void vector8() {
+        int[] numeros = new int[10];
+        int  v, p;
+        String opc;
+        boolean permiso = false;
 
+        do{
+            System.out.println("A. Mostrar valores");
+            System.out.println("B. Introducir un valor");
+            System.out.println("C. SALIR");
+
+            opc = Leer.leerTexto("¿Qué quiere hacer? ").toUpperCase();
+
+            if (opc.equals("A")){
+                for (int numero : numeros) {
+                    if (numero > 1) {
+                        permiso = true;
+                        break;
+                    }
+                }
+
+                if (permiso){
+                    System.out.println("Los valores són: " + Arrays.toString(numeros));
+                }
+
+            } else if (opc.equals("B")) {
+                v = Leer.leerEntero("Introduce un valor: ");
+                p = Leer.leerEntero("Introduce una posición: ");
+
+                numeros[p] = v;
+
+            } else {
+                System.out.println("ERROR: Valor introducido no válido.");
+            }
+
+        }while (!opc.equals("C"));
     }
 
     /**
